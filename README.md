@@ -1,4 +1,4 @@
-# Bbootcamp Homepage
+# Bootcamp Homepage
 
 ## WEEK 1
 

@@ -33,7 +33,7 @@ function outer() {
   function incrementCounter() { 
     counter++; 
   } 
-  return c; 
+  return incrementCounter; 
 } 
 const myFunction = outer(); 
 myFunction() // 1 

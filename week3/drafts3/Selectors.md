@@ -48,7 +48,7 @@ _Not:  **body, head, documentElement, title**  tek bir nesneyi döndürür. Diğ
      
     <script>
     
-    var nesne= document.getElementById("birinci");
+    var nesneler= document.getElementById("birinci");
     console.log(nesneler);
     </script>
 
@@ -121,7 +121,7 @@ Element bulunamazsa eğer null döner.
     <script>
     
     var nesneler= document.querySelectorAll(".kutu");
-    console.log(nesne); //.kutu ile eşleşen tüm kayıtları getirir.
+    console.log(nesneler); //.kutu ile eşleşen tüm kayıtları getirir.
     </script>
 
 **Not:** querySelectorAll, Internet Explorer 8 ve önceki sürümlerinde desteklenmemektedir.

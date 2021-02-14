@@ -26,9 +26,10 @@ const people = [
 
 const peopleOlderThan20 = people.filter(person => person.age > 20);
 const firstPersonKnowsJs = people.find((person) => {
+  //return person.languages.some(language => language === "JavaScript");
   //return person.languages.includes("JavaScript");
   //return person.languages.find(language => language === "JavaScript");
-  // return person.languages.indexOf("JavaScript") > -1;
+  //return person.languages.indexOf("JavaScript") > -1;
 });
 firstPersonKnowsJs
 

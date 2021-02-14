@@ -3,7 +3,7 @@ import {searchMovieByTitle, makeBgActive} from "./helpers.js";
 
 class MoviesApp {
     constructor(options) {
-        const {root, searchInput, searchForm, yearHandler, yearSubmitter} = options;
+        const { root, searchInput, searchForm, yearHandler, yearSubmitter, genreSubmitter } = options;
         this.$tableEl = document.getElementById(root);
         this.$tbodyEl = this.$tableEl.querySelector("tbody");
 
@@ -11,6 +11,7 @@ class MoviesApp {
         this.$searchForm   = document.getElementById(searchForm);
         this.yearHandler = yearHandler;
         this.$yearSubmitter = document.getElementById(yearSubmitter);
+        this.$genreSubmitter = document.getElementById(genreSubmitter);
     }
 
     createMovieEl(movie){
@@ -51,9 +52,19 @@ class MoviesApp {
         this.$yearSubmitter.addEventListener("click", () => {
             this.reset();
             const selectedYear = document.querySelector(`input[name='${this.yearHandler}']:checked`).value
+            console.log("selectedYear=>", selectedYear)
             const matchedMovies = data.filter((movie) => {
                 return movie.year === selectedYear;
             }).forEach(makeBgActive)
+        });
+    }
+
+    handleGenreFilter() {
+        this.$genreSubmitter.addEventListener("click", () => {
+            this.reset();
+            const selectedGenres = document.querySelectorAll(`input[class='genre']`)
+            console.log("selectedGenres=>", selectedGenres)
+
         });
     }
 
@@ -61,6 +72,7 @@ class MoviesApp {
         this.fillTable();
         this.handleSearch();
         this.handleYearFilter();
+        this.handleGenreFilter();
     }
 }
 
@@ -69,7 +81,8 @@ let myMoviesApp = new MoviesApp({
     searchInput: "searchInput",
     searchForm: "searchForm",
     yearHandler: "year",
-    yearSubmitter: "yearSubmitter"
+    yearSubmitter: "yearSubmitter",
+    genreSubmitter: 'genreSubmitter'
 });
 
 myMoviesApp.init();

@@ -7,39 +7,38 @@ const fruitsCopy = [...fruits, ...otherFruits];
 
 /// slice
 const [apple, orange, ...remainingFruits] = fruits;
-apple
-remainingFruits
+apple;
+remainingFruits;
 
-function add(...args){
+function add(...args) {
   let result = 0;
-  for(let i=0; i<args.length; i++){
+  for (let i = 0; i < args.length; i++) {
     result += args[i];
   }
   return result;
 }
 
 add(1);
-add(1,2,3);
-add(1,2,3,5,10);
-
+add(1, 2, 3);
+add(1, 2, 3, 5, 10);
 
 const circle = {
-  radius: 10
+  radius: 10,
 };
 
 const color = {
-  color: "red"
+  color: "red",
 };
 
-const biggerCircle = {...circle, ...color};
+const biggerCircle = { ...circle, ...color };
 
-const clonedCircle = {...circle};
+const clonedCircle = { ...circle };
 const otherClonedCircle = Object.assign({}, biggerCircle);
 
 const coloredCircle = {
   ...circle,
   radius: 20,
-  color: "red"
+  color: "red",
 };
 
 console.log(coloredCircle);
@@ -47,25 +46,28 @@ console.log(coloredCircle);
 const person = {
   name: "John",
   languages: {
-    "JavaScript": true,
-    "GO": true,
+    JavaScript: true,
+    GO: true,
     other: {
-      "Java": {
-        basic: true
-      }
-    }
-  }
-}
+      Java: {
+        basic: true,
+      },
+    },
+  },
+};
 /**
-* shadow copy sadece refenransı alır
-* nested objelerde rest operator sıkıntı çıkarıyor
-* kopyalarken içinde yer alan objeleri de rest operatörü ile al
-* assign ile rest operator arasında ki fark budur
+ * shadow copy sadece refenransı alır
+ * nested objelerde rest operator sıkıntı çıkarıyor
+ * kopyalarken içinde yer alan objeleri de rest operatörü ile al
+ * assign ile rest operator arasında ki fark budur
  */
-const clonedPerson = {...person, languages: {...person.languages, other: {...person.languages.other}}};
+const clonedPerson = {
+  ...person,
+  languages: { ...person.languages, other: { ...person.languages.other } },
+};
 const clonedObjAssign = Object.assign({}, clonedPerson);
 clonedPerson.name = "Joe";
 clonedPerson.languages["GO"] = false;
 clonedPerson.languages.other.Java = false;
-person
+person;
 clonedPerson;

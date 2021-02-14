@@ -1,0 +1,16 @@
+img {
+    height: 50px;
+}
+
+.box {
+    margin: 15px 0;
+    padding: 10px;
+    background: #bff3dc;
+}
+
+.btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}

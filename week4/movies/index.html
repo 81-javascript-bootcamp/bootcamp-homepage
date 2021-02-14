@@ -25,18 +25,18 @@
             <div class="box">
                 <h5>Filter by year</h5>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        2011
+                    <input class="form-check-input" type="radio" name="year" id="year1" value="2008">
+                    <label class="form-check-label" for="year1">
+                        2008
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
-                        1999
+                    <input class="form-check-input" type="radio" name="year" id="year2" value="1993">
+                    <label class="form-check-label" for="year2">
+                        1993
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="submit" class="btn btn-primary" id="yearSubmitter">Filter</button>
 
             </div>
             <div class="box">
@@ -77,6 +77,8 @@
                 </tbody>
             </table>
         </div>
+
+
     </div>
 </div>
 <script src="./scripts/main.js" type="module"></script>
